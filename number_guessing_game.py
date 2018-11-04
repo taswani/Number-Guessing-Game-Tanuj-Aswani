@@ -32,7 +32,10 @@ def start_game():
             continue
         elif guess == random_number:
             print("\n\033[1mCongrats! You guessed the number! \033[0m\n")
-            print("It took", num_guesses, "trie(s) for you to guess the number!\n")
+            if num_guesses == 1:
+                print("It took", num_guesses, "try for you to guess the number!\n")
+            else:
+                print("It took", num_guesses, "tries for you to guess the number!\n")
             if num_guesses < high_score or high_score == 0:
                 high_score = num_guesses
             while True:
@@ -42,7 +45,7 @@ def start_game():
                     num_guesses = 1
                     break
                 elif restart.lower() == "n":
-                    print("Goodbye!")
+                    print("\nGoodbye!\n")
                     game_done = True
                     break
                 else:
