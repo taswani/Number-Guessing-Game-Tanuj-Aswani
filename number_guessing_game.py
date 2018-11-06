@@ -43,6 +43,7 @@ def start_game():
                 if restart.lower() == "y":
                     print("\nCurrent high score is {}!\n".format(high_score))
                     num_guesses = 1
+                    random_number = random.randint(1, 10)
                     break
                 elif restart.lower() == "n":
                     print("\nGoodbye!\n")
